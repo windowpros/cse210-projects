@@ -12,7 +12,7 @@ class Program
 
         Console.WriteLine("Input your last name: ");
         string lastname = Console.ReadLine();
-        Console.WriteLine($"Your full name is: {lastname}, {firstname}");
+        Console.WriteLine($"Your full name is: {lastname}, {firstname} {lastname}");
 
     }
 }
