@@ -1,4 +1,5 @@
 using System;
+using System.Linq.Expressions;
 
 class Program
 {
@@ -14,15 +15,22 @@ class Program
         // string lastname = Console.ReadLine();
         // Console.WriteLine($"Your full name is: {lastname}, {firstname} {lastname}");
 
-        int x = 10;
-        if (x == 10)
 
+        // int x = 10;
+        // if (x == 10)
+
+        // {
+        //     Console.WriteLine("X is 10");
+        // }
+        // Console.WriteLine("How are you?");
+
+        // Console.WriteLine("Hey, how are you?");
+
+
+        for(int i = 0; i < 20; i++)
         {
-            Console.WriteLine("X is 10");
+            Console.WriteLine($"Hello Bob {i}");
         }
-        Console.WriteLine("How are you?");
-
-        Console.WriteLine("Hey, how are you?");
 
     }
 }
