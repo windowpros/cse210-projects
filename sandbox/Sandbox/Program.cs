@@ -22,5 +22,7 @@ class Program
         }
         Console.WriteLine("How are you?");
 
+        Console.WriteLine("Hey, how are you?");
+
     }
 }
