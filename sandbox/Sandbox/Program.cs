@@ -3,8 +3,17 @@ using System.Linq.Expressions;
 
 class Program
 {
+
+    static double AddNumbers(double a, double b)
+    {
+        return a + b;
+    }
     static void Main(string[] args)
     {
+        double total = AddNumbers(127.66, 234426.87);
+        Console.WriteLine(total);
+        
+        
         // Console.WriteLine("Hello Sandbox World!");
 
         // Console.WriteLine("Input your first name: ");
@@ -27,10 +36,31 @@ class Program
         // Console.WriteLine("Hey, how are you?");
 
 
-        for(int i = 0; i < 20; i++)
-        {
-            Console.WriteLine($"Hello Bob {i}");
-        }
+        // for(int i = 0; i < 20; i++)
+        // {
+        //     Console.WriteLine($"Hello Bob {i}");
+        // }
+
+        // int x = 0;
+        // int y = x++;
+        // Console.WriteLine(x);
+        // Console.WriteLine(y);
+
+
+        // List<int> myNumbers = new List<int>();
+        // myNumbers.Add(99);
+        // myNumbers.Add(55);
+        // // myNumbers.Append(-150);
+        // myNumbers.Add(240);
+
+        // foreach(int i in myNumbers)
+        // {
+        //     Console.WriteLine(i);
+        // }
+
+
+        
+
 
     }
 }
