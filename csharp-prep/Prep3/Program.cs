@@ -1,14 +1,18 @@
 using System;
 using System.Collections;
+using System.Security.Cryptography;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep3 World!");
-        Console.WriteLine("What is the magic number? ");
-        string magicNumber = Console.ReadLine();
-        int secretNumber = int.Parse(magicNumber);
+        // Console.WriteLine("Hello Prep3 World!");
+        // Console.WriteLine("What is the magic number? ");
+        // string magicNumber = Console.ReadLine();
+        // int secretNumber = int.Parse(magicNumber);
+
+        Random randomGenerator = new Random();
+        int secretNumber = randomGenerator.Next(1,100);
 
     
         int aGuess = 0;
