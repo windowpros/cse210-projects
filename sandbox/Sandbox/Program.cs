@@ -6,27 +6,27 @@ class Program
 
     static void Main(string[] args)
     {
-       Circle myCircle = new Circle();
-       myCircle.SetRadius(10);
+       Circle myCircle = new Circle(10);
+    //    myCircle.SetRadius(10);
        Console.WriteLine($"{myCircle.GetRadius()}");
        
-       Circle myCircle2 = new Circle();
-       myCircle2.SetRadius(20);
-       Console.WriteLine($"{myCircle2.GetRadius()}");   
+    //    Circle myCircle2 = new Circle();
+    //    myCircle2.SetRadius(20);
+    //    Console.WriteLine($"{myCircle2.GetRadius()}");   
 
-       Console.WriteLine($"{myCircle.GetArea()}");
-       Console.WriteLine($"{myCircle2.GetArea()}");
+    //    Console.WriteLine($"{myCircle.GetArea()}");
+    //    Console.WriteLine($"{myCircle2.GetArea()}");
 
-       Cylinder myCylinder = new Cylinder();
-       myCylinder.SetHeight(10);
-       myCylinder.SetCircle(myCircle);
+       Cylinder myCylinder = new Cylinder(100,8);
+    //    myCylinder.SetHeight(10);
+    //    myCylinder.SetCircle(myCircle);
 
-       Cylinder myCylinder2 = new Cylinder();
-       myCylinder2.SetHeight(10);
-       myCylinder2.SetCircle(myCircle2);
+    //    Cylinder myCylinder2 = new Cylinder();
+    //    myCylinder2.SetHeight(10);
+    //    myCylinder2.SetCircle(myCircle2);
 
        Console.WriteLine($"{myCylinder.GetVolume()}");
-       Console.WriteLine($"{myCylinder2.GetVolume()}");
+    //    Console.WriteLine($"{myCylinder2.GetVolume()}");
 
         // Console.WriteLine("Hello World!");
     }
