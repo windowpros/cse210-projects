@@ -24,7 +24,7 @@ class WordCounter
     {
         foreach (string word in _words)
         {
-
+            Console.WriteLine(word);
         }
     }
 

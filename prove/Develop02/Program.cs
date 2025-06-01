@@ -20,6 +20,7 @@ class Program
             Console.WriteLine("4. Load from a file. ");
             Console.WriteLine("5. Quit");
             string _choice = Console.ReadLine();
+            
 
             switch (_choice)
             {
