@@ -25,3 +25,4 @@ class Program
         Console.WriteLine("\nGood job! All words are now hidden.");
     }
 }
+// this is the final code
