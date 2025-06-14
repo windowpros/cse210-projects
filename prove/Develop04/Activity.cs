@@ -36,7 +36,7 @@ public abstract class Activity
 
     protected void ShowSpinner(int seconds)
     {
-        string[] symbols = {"|", "/", "-", "\\"};
+        string[] symbols = {"G", "O", "O", "D", "", "J", "O", "B", "!"};
         DateTime end = DateTime.Now.AddSeconds(seconds);
         int i = 0;
         while (DateTime.Now < end)
