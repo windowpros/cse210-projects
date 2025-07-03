@@ -1,55 +1,91 @@
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.Marshalling;
-using System.Security.Authentication.ExtendedProtection;
-
-class Goal
+public class Goal
 {
-    string _goalType;
-    string _goalName;
-    string _goalDiscription;
-    int _numberOfPoints;
-    bool _status;
+    private string _goalType;
+    private string _goalName;
+    private string _goalDescription;
+    private int _numberOfPoints;
+    private bool _status;
 
-    protected Goal()
-    {
+    public Goal() { }
 
-    }
-
-    protected Goal(string type, string name, string discription, int points, bool status)
+    public Goal(string type, string name, string description, int points)
     {
         _goalType = type;
         _goalName = name;
-        _goalDiscription = discription;
+        _goalDescription = description;
         _numberOfPoints = points;
-        _status = status;
+        _status = false;
     }
 
-    private string GetName()
+    public virtual string GetName()
     {
         return _goalName;
+    } 
+
+    public virtual void SetName(string name)
+    {
+        if (!string.IsNullOrWhiteSpace(name))
+        {
+            _goalName = name;
+        }
     }
-    private string GetType()
+
+    public virtual string GetDescription()
+    {
+        return _goalDescription;
+    }
+
+    public virtual void SetDescription(string description)
+    {
+        if (!string.IsNullOrWhiteSpace(description))
+        {
+            _goalDescription = description;
+        }
+    }
+
+    public virtual int GetPoints()
+    {
+        return _numberOfPoints;
+    } 
+
+    public virtual void SetPoints(int points)
+    {
+        if (points >= 0)
+        {
+            _numberOfPoints = points;
+        }
+    }
+
+        public virtual string GetGoalType()
     {
         return _goalType;
     }
-    private string GetDiscription()
+
+    public virtual void SetGoalType(string type)
     {
-        return _goalDiscription;
+        _goalType = type;
     }
-    private int GetPoints()
-    {
-        return _numberOfPoints;
-    }
-    private bool GetStatus()
+
+    public virtual bool GetStatus()
     {
         return _status;
     }
 
-    public virtual string DisplayGoal()
+    public virtual void SetStatus(bool status)
     {
-        return $"Type: {_goalType}, Name: {_goalName}, Description: {_goalDiscription}, Points: {_numberOfPoints}, Status: {_status}";
+        _status = status;
     }
 
-   
 
+    public virtual int RecordEvent()
+    {
+        _status = true;
+        return _numberOfPoints;
+    }
+
+    public virtual string GetDisplayString()
+    {
+        string statusString = _status ? "[X]" : "[ ]";
+        return $"{statusString} {_goalName} ({_goalDescription})";
+    }
 }

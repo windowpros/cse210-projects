@@ -237,14 +237,15 @@
             "stopAtEntry": false
         },
 
+        
         {
-            "name": "Foundation 4 (Exercise)",
+            "name": "Inheritance Practice",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build-final-Foundation4",
-            "program": "${workspaceFolder}/final/Foundation4/bin/Debug/net8.0/Foundation4.dll",
+            "preLaunchTask": "build-Inheretance Practice",
+            "program": "${workspaceFolder}/Inheritance Practice/bin/Debug/net8.0/Inheritance Practice.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/final/Foundation4",
+            "cwd": "${workspaceFolder}/Inheritance Practice",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
