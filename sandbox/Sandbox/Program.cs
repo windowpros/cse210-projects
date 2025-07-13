@@ -1,52 +1,77 @@
 using System;
+using System.IO.Compression;
 using System.Linq.Expressions;
 
 class Program
 {
 
+   static void TestByRef(ref int x, ref string n)
+   {
+      x++;
+      n += "Plus Betty";
+      Console.WriteLine($"In Main: {x}, {n}");
+   }
+
+   static void TestByOut(out int a)
+   {
+      a = 1010101;
+      Console.WriteLine($"My number = {a}");
+   }
    static void Main(string[] args)
    {
 
+      Console.WriteLine("YeeHawww");
 
-      int duration = 9;
-      DateTime currentTime = DateTime.Now;
-      DateTime endTime = currentTime.AddSeconds(10);
-      int sleepTime = 250;
-      int count = duration;
+      int z = 10;
+      string name = "Bob";
 
-      string animationString = "(^_^)(-_-)";
+      TestByRef(ref z, ref name);
+      Console.WriteLine($"In Main: {z}, {name}");
+
+      int c;
+
+      TestByOut(out c);
+      Console.WriteLine($"My number = {c}");
+
+      // int duration = 9;
+      // DateTime currentTime = DateTime.Now;
+      // DateTime endTime = currentTime.AddSeconds(10);
+      // int sleepTime = 250;
+      // int count = duration;
+
+      // string animationString = "(^_^)(-_-)";
 
 
-      while (DateTime.Now < endTime)
-      {
-         Console.Write(animationString[0..5]);
-         Thread.Sleep(sleepTime);
-         Console.Write("\b\b\b\b\b");
-         Console.Write(animationString[5..]);
-         Thread.Sleep(sleepTime);
-         Console.Write("\b\b\b\b\b");
+      // while (DateTime.Now < endTime)
+      // {
+      //    Console.Write(animationString[0..5]);
+      //    Thread.Sleep(sleepTime);
+      //    Console.Write("\b\b\b\b\b");
+      //    Console.Write(animationString[5..]);
+      //    Thread.Sleep(sleepTime);
+      //    Console.Write("\b\b\b\b\b");
 
-      }
+      // }
 
-      while (DateTime.Now < endTime)
-      {
-         Console.Write(count--);
-         Thread.Sleep(1000);
-         // if (count >= 10)
-         //    Console.WriteLine("\n\n");
-         Console.Write("\b");
+      // while (DateTime.Now < endTime)
+      // {
+      //    Console.Write(count--);
+      //    Thread.Sleep(1000);
+      //    // if (count >= 10)
+      //    //    Console.WriteLine("\n\n");
+      //    Console.Write("\b");
 
-      }
+      // }
 
-      while (DateTime.Now < endTime)
-         {
-            Console.Write("+");
-            Thread.Sleep(sleepTime);
-            Console.Write("\b");
-            Console.Write("-");
-            Thread.Sleep(sleepTime);
-            Console.Write("\b");
-         }
+      // while (DateTime.Now < endTime)
+      //    {
+      //       Console.Write("+");
+      //       Thread.Sleep(sleepTime);
+      //       Console.Write("\b");
+      //       Console.Write("-");
+      //       Thread.Sleep(sleepTime);
+      //       Console.Write("\b");
+      //    }
 
       //  Circle myCircle = new Circle(10);
       //    myCircle.SetRadius(10);
