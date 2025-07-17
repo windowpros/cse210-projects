@@ -1,36 +1,22 @@
-using System.Runtime.CompilerServices;
-
 public class Helicopter : Flyers
 {
-    public Helicopter(string Name, int hp, int yr, int maxwt)
-        base("Helicopter", name, hp, yr, maxwt)
-        {}
+    private int _rotorDiameter;
+    private int _rotorCount;
 
-    int _rotorDiameter;
-    int _rotorCount;
-
-    private int GetRotorDiameter(int diameter)
+    public Helicopter(string name, int hp, int yr, int maxtakf, int rotorDiameter, int rotorCount)
+        : base(name, hp, yr, 0, maxtakf)
     {
-        Console.WriteLine("Diameter: ");
-        diameter = int.Parse(Console.ReadLine());
-        _rotorDiameter = diameter;
-        return _rotorDiameter;
-    }
-    private void SetRotorDiameter(int diameter)
-    {
-        _rotorDiameter = diameter;
-    }
-    private int GetRotorCount(int rc)
-    {
-        Console.WriteLine("Number of rotors: ");
-        rc = int.Parse(Console.ReadLine());
-        _rotorCount = rc;
-        return _rotorCount;
+        _rotorDiameter = rotorDiameter;
+        _rotorCount = rotorCount;
     }
 
-    private override CalcScore()
+    public override int CalcScore()
     {
-        int HelicopterScore = 5 * _rotorDiameter + 50 * _rotorCount;
+        return 5 * _rotorDiameter + 50 * _rotorCount;
     }
 
+    public override string Serialize()
+    {
+        return $"Helicopter#{_modelName}#{_horsePower}#{_year}#{_maxTakeOffWeight}#{_rotorDiameter}#{_rotorCount}";
+    }
 }

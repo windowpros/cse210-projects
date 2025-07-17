@@ -1,54 +1,24 @@
-using System.Reflection.Metadata.Ecma335;
-
 public class Plane : Flyers
 {
-    public Plane(string Name, int hp, int yr, int maxwt)
-        base("Plane", name, hp, yr, maxwt)
-        {}
+    private string _landingGear;
+    private int _engineCount;
 
-    string _landingGear;
-    int _engineCount;
-
-    private string GetLandingGear(string gear)
+    public Plane(string name, int hp, int yr, int maxtakf, string landingGear, int engineCount)
+        : base(name, hp, yr, 0, maxtakf)
     {
-        Console.WriteLine("Is this Land or Sea:");
-        gear = Console.ReadLine();
-        _landingGear = gear;
-        return _landingGear ?? "N/A";
-    }
-    private void SetLandingGear(string gear)
-    {
-        _landingGear = gear;
+        _landingGear = landingGear;
+        _engineCount = engineCount;
     }
 
-    private int GetEngines(int engines)
+    public override int CalcScore()
     {
-        Console.WriteLine("Is this Land or Sea:");
-        engines = int.Parse(Console.ReadLine());
-        _engineCount = engines;
-        return _engineCount;
-    }
-    private void SetEngines(int engines)
-    {
-        _engineCount = engines;
+        int landingGearScore = _landingGear.ToLower() == "land" ? 50 : 0;
+        int engineScore = _engineCount * 10;
+        return landingGearScore + engineScore;
     }
 
-    private override CalcScore()
+    public override string Serialize()
     {
-        int landinggearscore = 0;
-        string lg = _landingGear.ToLower();
-        if (string lg != "sea")
-        {
-            landinggearscore = 50;
-        }
-        else
-        {
-            landinggearscore = 0;
-        }
-
-        int EnginesScore = _engineCount * 10;
-        int PlaneScore = landinggearscore + EnginesScore;
-        return PlaneScore;
+        return $"Plane#{_modelName}#{_horsePower}#{_year}#{_maxTakeOffWeight}#{_landingGear}#{_engineCount}";
     }
-
 }

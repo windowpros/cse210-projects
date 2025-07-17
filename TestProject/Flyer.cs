@@ -1,10 +1,10 @@
-abstract class Flyers
+public abstract class Flyers
 {
-    private string _modelName;
-    private int _horsePower;
-    private int _year;
-    private int _hourlyScore;
-    private int _maxTakeOffWeight;
+    protected string _modelName;
+    protected int _horsePower;
+    protected int _year;
+    protected int _hourlyScore;
+    protected int _maxTakeOffWeight;
 
     public Flyers(string name, int hp, int yr, int hrlyscore, int maxtakf)
     {
@@ -15,56 +15,9 @@ abstract class Flyers
         _maxTakeOffWeight = maxtakf;
     }
 
-    public Flyers() { }
+    public Flyers() {}
 
-    private string GetModel(string name)
-    {
-        Console.WriteLine("Model: ");
-        name = Console.ReadLine();
-        _modelName = name;
-        return _modelName ?? "N/A";
-    }
-    private void SetModel(string name)
-    {
-        _modelName = name;
-    }
-    private int GetHorsePower(int hp)
-    { 
-        Console.WriteLine("Horse Power: ");
-        hp = int.Parse(Console.ReadLine());
-        _horsePower = hp;
-        return _horsePower;
-    }
-    private void SetHorsePower(int hp)
-    {
-        _horsePower = hp;
-    }
-    private int GetYear(int yr)
-    { 
-        Console.WriteLine("Horse Power: ");
-        yr = int.Parse(Console.ReadLine());
-        _year = yr;
-        return _year;
-    }
-    private void SetYear(int yr)
-    {
-        _year = yr;
-    }
-    private int GetMaxTakeOffWeight(int maxwt)
-    { 
-        Console.WriteLine("Horse Power: ");
-        maxwt = int.Parse(Console.ReadLine());
-        _maxTakeOffWeight = maxwt;
-        return _maxTakeOffWeight;
-    }
-    private void SetMaxTakeOffWeight(int mxwgt)
-    {
-        _maxTakeOffWeight = mxwgt;
-    }
-    private abstract CalcScore();
-    
-
-
-    
-
+    public string GetModel() => _modelName;
+    public abstract int CalcScore();
+    public abstract string Serialize();
 }
