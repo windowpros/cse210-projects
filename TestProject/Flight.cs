@@ -1,8 +1,8 @@
 public class Flight
 {
-    public Flyers FlyerUsed { get; set; }
-    public int DurationMinutes { get; set; }
-    public int Points => DurationMinutes + FlyerUsed.CalcScore();
+    private Flyers FlyerUsed { get; set; }
+    private int DurationMinutes { get; set; }
+    private int Points => DurationMinutes + FlyerUsed.CalcScore();
 
     public Flight(Flyers flyer, int minutes)
     {
